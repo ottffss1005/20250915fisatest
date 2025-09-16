@@ -2,7 +2,8 @@
 
 ## 프로젝트 개요
 
-이 프로젝트는 Spring/Gradle 프로젝트를 Jenkins에서 빌드하고, Docker 컨테이너에서 실행하는 과정을 다룸
+Spring/Gradle 프로젝트를 Jenkins에서 빌드하고, Docker 컨테이너에서 실행
+
 주요 목표:
 
 * STS에서 프로젝트 생성 후 GitHub 업로드
