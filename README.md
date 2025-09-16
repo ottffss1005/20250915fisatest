@@ -137,7 +137,7 @@ java -jar step04_gradeBuild-0.0.1-SNAPSHOT.jar
 
 ### Bind Mount에서 jar 파일이 보이지 않을 때
 
-Jenkins에서 `step03_teamArt` 프로젝트를 빌드했는데, 컨테이너에서 실행한 bind mount 경로 `/app`에 jar 파일이 보이지 않음.
+Jenkins에서 `step03_teamArt` 프로젝트를 빌드 했지만, 컨테이너에서 실행한 bind mount 경로 `/app`에 jar 파일이 보이지 않음
 
 ```
 /var/jenkins_home/workspace/step03_teamArt
@@ -152,9 +152,9 @@ Jenkins에서 `step03_teamArt` 프로젝트를 빌드했는데, 컨테이너에�
 
 ### 원인 분석
 
-1. 호스트 `/var/jenkins_home/workspace/step03_teamArt` 폴더는 **Jenkins 컨테이너 내부의 volume이 아닌 단순한 호스트 폴더**였음.
-2. `docker run -v /var/jenkins_home/workspace/step03_teamArt:/app`를 통해 bind mount를 시도했지만, **호스트 폴더가 비어있으면 컨테이너 내부 빌드 결과가 덮어씌워져 보이지 않음**.
-3. Jenkins 컨테이너 내부에서 생성된 jar 파일은 **컨테이너의 볼륨 내부**에만 존재하고, 호스트 폴더에는 자동으로 복사되지 않음.
+1. 호스트 `/var/jenkins_home/workspace/step03_teamArt` 폴더는 **Jenkins 컨테이너 내부의 volume이 아닌 단순한 호스트 폴더**
+2. `docker run -v /var/jenkins_home/workspace/step03_teamArt:/app`를 통한 bind mount 시도 -> 호스트 폴더가 비어있으면 컨테이너 내부 빌드 결과가 덮어씌워져 보이지 않는 문제 발생
+3. Jenkins 컨테이너 내부에서 생성된 **jar 파일은 컨테이너의 볼륨 내부**에만 존재하고, 호스트 폴더에는 자동으로 복사 되지 않음 
 
 ### 해결 방법
 
