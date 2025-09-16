@@ -63,7 +63,7 @@ pipeline {
 
 ## 3️⃣ Docker 컨테이너에서 실행
 
-### 3-1️⃣ Bind Mount 방식
+### 1️⃣ Bind Mount 방식
 
 ```bash
 docker run -it \
@@ -90,7 +90,7 @@ docker cp myjenkins:/var/jenkins_home/workspace/step03_teamArt/build/libs /home/
 
 ---
 
-### 3-2️⃣ Docker Volume 방식
+### 2️⃣ Docker Volume 방식
 
 1. Volume 생성
 
