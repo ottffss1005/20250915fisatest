@@ -1,4 +1,4 @@
-#  Jenkins + Docker + Gradle Build CI Example
+#  JENKINS를 사용한 CI/CD
 
 ## 프로젝트 개요
 
